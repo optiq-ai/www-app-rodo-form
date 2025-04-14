@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warunki korzystania z aplikacji - Formularz Oceny RODO by Szamani.AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #ff6b6b;
+            --text-dark: #333;
+            --text-light: #666;
+            --background-light: #f9f9f9;
+            --border-radius-sm: 5px;
+            --border-radius-md: 10px;
+            --border-radius-lg: 20px;
+            --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition-fast: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo a {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Terms Section */
+        .terms-section {
+            padding: 5rem 0;
+        }
+        
+        .terms-content {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .terms-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .terms-content h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .terms-content h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .terms-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .terms-content li {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-column h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 1.5px;
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-column {
+                flex: 100%;
+                padding-right: 0;
+            }
+            
+            .terms-content {
+                padding: 2rem;
+            }
+            
+            .terms-content h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .terms-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">Szamani.AI</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">O nas</a></li>
+                    <li><a href="index.html#features">Funkcje</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                    <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-content">
+                <h1>Warunki korzystania z aplikacji</h1>
+                
+                <p>Witamy w aplikacji Formularz Oceny RODO by Szamani.AI. Niniejszy dokument określa warunki korzystania z naszej aplikacji. Korzystając z naszej aplikacji, akceptujesz niniejsze warunki. Prosimy o uważne zapoznanie się z nimi.</p>
+                
+                <h2>1. Definicje</h2>
+                <p>Na potrzeby niniejszych Warunków korzystania z aplikacji:</p>
+                <ul>
+                    <li>"Aplikacja" oznacza Formularz Oceny RODO by Szamani.AI;</li>
+                    <li>"Użytkownik" oznacza osobę fizyczną lub prawną korzystającą z Aplikacji;</li>
+                    <li>"Szamani.AI" oznacza właściciela i administratora Aplikacji;</li>
+                    <li>"RODO" oznacza Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE.</li>
+                </ul>
+                
+                <h2>2. Zakres usług</h2>
+                <p>Aplikacja Formularz Oceny RODO by Szamani.AI umożliwia przeprowadzenie kompleksowej oceny zgodności z RODO, generowanie raportów oraz otrzymywanie rekomendacji dotyczących poprawy zgodności z przepisami o ochronie danych osobowych.</p>
+                
+                <h2>3. Rejestracja i konto użytkownika</h2>
+                <p>Aby korzystać z pełnej funkcjonalności Aplikacji, Użytkownik może być zobowiązany do utworzenia konta. Użytkownik zobowiązuje się do:</p>
+                <ul>
+                    <li>Podania prawdziwych, dokładnych, aktualnych i kompletnych informacji o sobie;</li>
+                    <li>Aktualizowania i niezwłocznego poprawiania wszelkich informacji, aby były one prawdziwe, dokładne, aktualne i kompletne;</li>
+                    <li>Zachowania poufności swojego hasła i ograniczenia dostępu do swojego konta;</li>
+                    <li>Niezwłocznego powiadomienia Szamani.AI o nieautoryzowanym użyciu swojego konta lub jakimkolwiek naruszeniu bezpieczeństwa.</li>
+                </ul>
+                
+                <h2>4. Prawa własności intelektualnej</h2>
+                <p>Aplikacja, w tym jej kod źródłowy, struktura, organizacja, design, algorytmy, interfejs użytkownika, wygląd i wrażenia, teksty, grafiki, zdjęcia, dźwięki, muzyka, wideo i inne materiały zawarte w Aplikacji, są własnością Szamani.AI i są chronione prawami autorskimi, znakami towarowymi i innymi prawami własności intelektualnej.</p>
+                <p>Użytkownik nie może:</p>
+                <ul>
+                    <li>Kopiować, modyfikować, adaptować, tłumaczyć, dekompilować, dezasemblować lub w inny sposób próbować uzyskać kod źródłowy Aplikacji;</li>
+                    <li>Usuwać, zmieniać lub zasłaniać jakichkolwiek informacji o prawach autorskich, znakach towarowych lub innych prawach własności intelektualnej zawartych w Aplikacji;</li>
+                    <li>Sprzedawać, licencjonować, wynajmować, dzierżawić, przekazywać, przypisywać, dystrybuować, hostować lub w inny sposób komercyjnie wykorzystywać Aplikacji;</li>
+                    <li>Używać Aplikacji w sposób, który narusza prawa Szamani.AI lub osób trzecich.</li>
+                </ul>
+                
+                <h2>5. Ograniczenia odpowiedzialności</h2>
+                <p>Aplikacja jest dostarczana w stanie "takim, jaki jest" i "jak dostępna", bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych. Szamani.AI nie gwarantuje, że:</p>
+                <ul>
+                    <li>Aplikacja będzie działać nieprzerwanie, bezpiecznie lub będzie dostępna w dowolnym czasie;</li>
+                    <li>Błędy lub defekty zostaną naprawione;</li>
+                    <li>Aplikacja jest wolna od wirusów lub innych szkodliwych komponentów;</li>
+                    <li>Wyniki uzyskane z korzystania z Aplikacji będą dokładne lub niezawodne.</li>
+                </ul>
+                <p>Szamani.AI nie ponosi odpowiedzialności za jakiekolwiek szkody bezpośrednie, pośrednie, przypadkowe, szczególne, wynikowe lub przykładowe, w tym utratę zysków, danych, użytkowania, wartości firmy lub inne straty niematerialne, wynikające z korzystania lub niemożności korzystania z Aplikacji.</p>
+                
+                <h2>6. Ochrona danych osobowych</h2>
+                <p>Szamani.AI przetwarza dane osobowe Użytkowników zgodnie z obowiązującymi przepisami o ochronie danych osobowych, w szczególności RODO. Szczegółowe informacje na temat przetwarzania danych osobowych znajdują się w Polityce Prywatności dostępnej w Aplikacji.</p>
+                
+                <h2>7. Zmiany w warunkach korzystania</h2>
+                <p>Szamani.AI zastrzega sobie prawo do zmiany niniejszych Warunków korzystania w dowolnym czasie. Zmiany wchodzą w życie po ich opublikowaniu w Aplikacji. Dalsze korzystanie z Aplikacji po wprowadzeniu zmian oznacza akceptację nowych Warunków korzystania.</p>
+                
+                <h2>8. Rozwiązanie umowy</h2>
+                <p>Szamani.AI może, według własnego uznania, zawiesić lub zakończyć dostęp Użytkownika do Aplikacji w przypadku naruszenia niniejszych Warunków korzystania. Użytkownik może w dowolnym momencie zaprzestać korzystania z Aplikacji.</p>
+                
+                <h2>9. Postanowienia końcowe</h2>
+                <p>Niniejsze Warunki korzystania stanowią całość porozumienia między Użytkownikiem a Szamani.AI dotyczącego korzystania z Aplikacji i zastępują wszelkie wcześniejsze porozumienia.</p>
+                <p>Jeśli jakiekolwiek postanowienie niniejszych Warunków korzystania zostanie uznane za nieważne lub niewykonalne, pozostałe postanowienia pozostają w mocy.</p>
+                <p>Niniejsze Warunki korzystania podlegają prawu polskiemu. Wszelkie spory wynikające z niniejszych Warunków korzystania będą rozstrzygane przez sądy właściwe dla siedziby Szamani.AI.</p>
+                
+                <h2>10. Kontakt</h2>
+                <p>W przypadku pytań dotyczących niniejszych Warunków korzystania, prosimy o kontakt:</p>
+                <p>Szamani.AI<br>
+                Łąkowa 1<br>
+                63-520 Grabów nad Prosną<br>
+                Email: ai@optiq.net.pl<br>
+                Tel: 609798340</p>
+                
+                <p>Data ostatniej aktualizacji: 14.04.2025</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>O nas</h4>
+                    <p>Szamani.AI to zespół ekspertów z zakresu ochrony danych osobowych i technologii informatycznych, dostarczający innowacyjne rozwiązania wspierające zgodność z RODO.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Szybkie linki</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">O nas</a></li>
+                        <li><a href="index.html#features">Funkcje</a></li>
+                        <li><a href="index.html#contact">Kontakt</a></li>
+                        <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+                        <li><a href="warunki-korzystania.html">Warunki korzystania</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <p>Szamani.AI<br>Łąkowa 1<br>63-520 Grabów nad Prosną</p>
+                    <p>Email: ai@optiq.net.pl<br>Tel: 609798340</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Szamani.AI. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
