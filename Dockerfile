@@ -11,8 +11,12 @@ RUN mkdir -p /usr/share/nginx/html/img
 # Copy website files with explicit permissions
 COPY index.html /usr/share/nginx/html/
 COPY css/styles.css /usr/share/nginx/html/css/
-COPY js/ /usr/share/nginx/html/js/
-COPY img/ /usr/share/nginx/html/img/
+
+# Copy js directory if it exists and is not empty
+COPY js/* /usr/share/nginx/html/js/ 2>/dev/null || :
+
+# Copy img directory if it exists and is not empty
+COPY img/.gitkeep /usr/share/nginx/html/img/ 2>/dev/null || :
 
 # Set proper permissions
 RUN chmod -R 755 /usr/share/nginx/html
