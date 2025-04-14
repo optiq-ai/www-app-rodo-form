@@ -3,8 +3,19 @@ FROM nginx:alpine
 # Install bash
 RUN apk add --no-cache bash
 
-# Copy website files
-COPY . /usr/share/nginx/html/
+# Create directory structure explicitly
+RUN mkdir -p /usr/share/nginx/html/css
+RUN mkdir -p /usr/share/nginx/html/js
+RUN mkdir -p /usr/share/nginx/html/img
+
+# Copy website files with explicit permissions
+COPY index.html /usr/share/nginx/html/
+COPY css/styles.css /usr/share/nginx/html/css/
+COPY js/ /usr/share/nginx/html/js/
+COPY img/ /usr/share/nginx/html/img/
+
+# Set proper permissions
+RUN chmod -R 755 /usr/share/nginx/html
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
