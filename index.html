@@ -4,82 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularz Oceny RODO by Szamani.AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Podstawowe style */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* Nowoczesne style */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #ff4081;
+            --accent-color: #3a0ca3;
+            --light-color: #f8f9fa;
+            --dark-color: #2d3748;
+            --success-color: #4caf50;
+            --text-color: #333;
+            --text-light: #666;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f8f9fa;
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
+        
+        /* Nawigacja */
         header {
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             padding: 1rem 0;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
         .logo a {
             text-decoration: none;
-            color: #4a6cf7;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--transition-normal);
         }
+        
+        .logo a:hover {
+            opacity: 0.9;
+        }
+        
+        /* Hero section */
         .hero {
-            background-color: #2962ff;
-            padding: 4rem 0;
+            background: var(--gradient-primary);
+            padding: 6rem 0 4rem;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
             color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
+        
         .hero p {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
+        
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            padding: 0.9rem 2rem;
+            border-radius: var(--border-radius-md);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1rem;
             margin: 10px;
-            transition: all 0.3s ease;
+            transition: var(--transition-normal);
+            text-align: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
         }
+        
         .btn-primary {
-            background-color: #ff4081;
+            background: var(--gradient-secondary);
             color: white;
+            border: none;
         }
+        
         .btn-primary:hover {
-            background-color: #e91e63;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .btn-lg {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Sekcje */
         .section {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
+        
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #2d3748;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
         .section-subtitle {
             text-align: center;
-            margin-bottom: 2rem;
-            color: #4a6cf7;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
             font-size: 1.8rem;
+            font-weight: 600;
         }
+        
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Karty korzyści */
         .features {
             display: flex;
             flex-wrap: wrap;
@@ -87,19 +230,66 @@
             gap: 2rem;
             margin-top: 3rem;
         }
+        
         .feature-card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
             width: 100%;
-            max-width: 300px;
+            max-width: 280px;
             text-align: center;
+            transition: var(--transition-normal);
+            border-top: 4px solid var(--primary-color);
         }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
         .feature-card h3 {
-            color: #2d3748;
+            color: var(--dark-color);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
+        
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Moduły */
+        .highlight {
+            background-color: #f0f4ff;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234361ee' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
         .modules {
             display: flex;
             flex-wrap: wrap;
@@ -107,10 +297,11 @@
             gap: 1.5rem;
             margin-top: 2rem;
         }
+        
         .module-card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
             padding: 1.5rem;
             width: 100%;
             max-width: 250px;
@@ -119,92 +310,433 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
         }
+        
+        .module-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
         .module-card h3 {
-            color: #4a6cf7;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
         }
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
+        
+        .module-detail {
             margin-top: 3rem;
-        }
-        .step-card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-detail::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 250px;
-            text-align: center;
+            height: 6px;
+            background: var(--gradient-primary);
         }
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #4a6cf7;
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            font-weight: bold;
-            margin-bottom: 1rem;
+        
+        .module-detail h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
-        .step-card h3 {
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-        .testimonial {
-            text-align: center;
-            margin-top: 2rem;
-            color: #4a6cf7;
-            font-weight: bold;
-        }
-        .highlight {
-            background-color: #f0f4ff;
-            padding: 3rem 0;
-        }
-        footer {
-            background-color: #2d3748;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 2rem;
-        }
+        
         .list-item {
             text-align: left;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .list-item:before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Jak to działa */
+        .steps-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .step-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .step-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Testimoniale */
+        .testimonials {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem 0;
+            background-color: rgba(67, 97, 238, 0.05);
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .testimonial-title {
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: """;
+            font-size: 4rem;
+            color: rgba(67, 97, 238, 0.2);
+            position: absolute;
+            line-height: 1;
+        }
+        
+        .testimonial-content::before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .testimonial-content::after {
+            content: """;
+            bottom: -40px;
+            right: 0;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Zaufali nam */
+        .trusted-by {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .trusted-title {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            opacity: 0.7;
+        }
+        
+        .trusted-logo {
+            height: 40px;
+            filter: grayscale(100%);
+            transition: var(--transition-normal);
+        }
+        
+        .trusted-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-lg);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Licznik */
+        .counter {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
             margin-bottom: 0.5rem;
         }
-        .list-item:before {
-            content: "•";
-            color: #4a6cf7;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+        
+        .counter-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsywność */
+        @media (max-width: 1024px) {
+            .steps-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .step-card {
+                min-width: 200px;
+                max-width: 45%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
+            .feature-card, .module-card {
+                max-width: 100%;
+            }
+            
+            .step-card {
+                max-width: 100%;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 80%;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .cta h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="#">Szamani.AI</a>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">Szamani.AI</a>
+                </div>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Ocena zgodności z RODO w zasięgu jednego kliknięcia</h1>
-            <p>Kompleksowa aplikacja, która przeprowadzi Cię przez wszystkie aspekty RODO</p>
-            <div>
-                <a href="http://form.optiq-ai.pl" class="btn btn-primary">Rozpocznij ocenę za darmo</a>
-            </div>
-            <div class="testimonial">
-                <p>Już ponad 1000 organizacji korzysta z naszego narzędzia</p>
+            <div class="hero-content">
+                <h1>Formularz Oceny RODO by Szamani.AI</h1>
+                <p>Kompleksowa aplikacja, która przeprowadzi Cię przez wszystkie aspekty RODO i zapewni pełną zgodność Twojej organizacji z przepisami</p>
+                <a href="http://form.optiq-ai.pl" class="btn btn-primary btn-lg">Rozpocznij ocenę za darmo</a>
+                <div class="testimonial">
+                    <p>Już ponad 1000 organizacji korzysta z naszego narzędzia</p>
+                </div>
             </div>
         </div>
     </section>
@@ -212,26 +744,50 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Kompleksowa ocena RODO jeszcze nigdy nie była tak prosta</h2>
+            <p class="section-description">Nasza aplikacja została zaprojektowana, aby przeprowadzić Cię przez wszystkie aspekty RODO w sposób intuicyjny i efektywny</p>
             
             <h2 class="section-subtitle">Dlaczego warto wybrać naszą aplikację?</h2>
-            <p style="text-align: center;">Poznaj kluczowe korzyści, które pomogą Twojej organizacji spełnić wymogi RODO</p>
+            <p class="section-description">Poznaj kluczowe korzyści, które pomogą Twojej organizacji spełnić wymogi RODO</p>
             
             <div class="features">
                 <div class="feature-card">
+                    <div class="feature-icon">💰</div>
                     <h3>Redukcja ryzyka kar finansowych</h3>
                     <p>Systematyczna ocena zgodności z RODO minimalizuje ryzyko naruszeń i związanych z nimi kar finansowych sięgających 20 mln EUR.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
                     <h3>Oszczędność czasu</h3>
                     <p>Zredukuj czas potrzebny na ocenę zgodności z RODO nawet o 60% dzięki intuicyjnemu interfejsowi i zautomatyzowanym procesom.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">📄</div>
                     <h3>Pełna dokumentacja zgodności</h3>
                     <p>Automatycznie generuj profesjonalne raporty dokumentujące zgodność z RODO, idealne podczas kontroli i audytów.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">👨‍💼</div>
                     <h3>Ekspertowe rekomendacje</h3>
                     <p>Otrzymuj praktyczne wskazówki i rekomendacje dotyczące poprawy zgodności z RODO, opracowane przez ekspertów.</p>
+                </div>
+            </div>
+            
+            <div class="testimonials">
+                <h3 class="testimonial-title">Co mówią nasi klienci</h3>
+                <div class="testimonial-content">
+                    <p>Dzięki aplikacji Szamani.AI nasza firma zaoszczędziła ponad 40 godzin pracy przy ocenie zgodności z RODO. Intuicyjny interfejs i szczegółowe raporty sprawiły, że cały proces był niezwykle efektywny.</p>
+                </div>
+                <p class="testimonial-author">Anna Kowalska, Inspektor Ochrony Danych w firmie XYZ</p>
+            </div>
+            
+            <div class="trusted-by">
+                <h4 class="trusted-title">Zaufali nam</h4>
+                <div class="trusted-logos">
+                    <div>Company A</div>
+                    <div>Company B</div>
+                    <div>Company C</div>
+                    <div>Company D</div>
+                    <div>Company E</div>
                 </div>
             </div>
         </div>
@@ -240,7 +796,7 @@
     <section class="section highlight">
         <div class="container">
             <h2 class="section-title">7 kompleksowych modułów oceny RODO</h2>
-            <p style="text-align: center;">Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
+            <p class="section-description">Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
             
             <div class="modules">
                 <div class="module-card">
@@ -266,8 +822,8 @@
                 </div>
             </div>
             
-            <div style="margin-top: 3rem; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h3 style="color: #4a6cf7;">Organizacja systemu ochrony danych</h3>
+            <div class="module-detail">
+                <h3>Organizacja systemu ochrony danych</h3>
                 <p>Ocenia fundamentalne aspekty organizacyjne systemu ochrony danych osobowych w Twojej organizacji, w tym:</p>
                 <ul style="list-style-type: none; padding-left: 1rem;">
                     <li class="list-item">Polityka ochrony danych osobowych</li>
@@ -284,9 +840,9 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Jak to działa?</h2>
-            <p style="text-align: center;">Prosty, 4-stopniowy proces oceny zgodności z RODO</p>
+            <p class="section-description">Prosty, 4-stopniowy proces oceny zgodności z RODO</p>
             
-            <div class="steps">
+            <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h3>Rozpocznij ocenę</h3>
@@ -309,15 +865,38 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="http://form.optiq-ai.pl" class="btn btn-primary">Rozpocznij teraz</a>
+            <div class="cta">
+                <div class="cta-content">
+                    <div class="counter">
+                        <div class="counter-number">1000+</div>
+                        <div class="counter-text">zadowolonych klientów</div>
+                    </div>
+                    <h3>Rozpocznij ocenę RODO już teraz!</h3>
+                    <p>Dołącz do tysięcy organizacji, które już korzystają z naszego narzędzia i zapewnij zgodność swojej firmy z przepisami RODO.</p>
+                    <a href="http://form.optiq-ai.pl" class="btn btn-primary btn-lg">Rozpocznij za darmo</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Szamani.AI. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-content">
+                <div class="footer-logo">Szamani.AI</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">O nas</a>
+                    <a href="#" class="footer-link">Funkcje</a>
+                    <a href="#" class="footer-link">Cennik</a>
+                    <a href="#" class="footer-link">Kontakt</a>
+                    <a href="#" class="footer-link">Polityka prywatności</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">t</a>
+                </div>
+                <p class="copyright">&copy; 2025 Szamani.AI. Wszelkie prawa zastrzeżone.</p>
+            </div>
         </div>
     </footer>
 </body>
