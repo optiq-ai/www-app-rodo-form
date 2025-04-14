@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  landing-page:
+    container_name: rodo-landing-page
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: always
+    networks:
+      - optiq_prod
+
+networks:
+  optiq_prod:
+    name: optiq_prod
+    external: true
