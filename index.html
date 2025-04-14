@@ -532,156 +532,9 @@
         
         .list-item:before {
             content: "✓";
+            position: absolute;
+            left: 0;
             color: var(--success-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Jak to działa */
-        .steps-container {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            gap: 1.5rem;
-            margin-top: 3rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-        }
-        
-        .step-card {
-            background: white;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-md);
-            padding: 2rem;
-            flex: 1;
-            min-width: 220px;
-            text-align: center;
-            transition: var(--transition-normal);
-            position: relative;
-        }
-        
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .step-card h3 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .step-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        /* Testimoniale */
-        .testimonials {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 2rem 0;
-            background-color: rgba(67, 97, 238, 0.05);
-            border-radius: var(--border-radius-lg);
-        }
-        
-        .testimonial-title {
-            color: var(--dark-color);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-        
-        .testimonial-content {
-            font-style: italic;
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-            position: relative;
-            padding: 0 2rem;
-        }
-        
-        .testimonial-content::before,
-        .testimonial-content::after {
-            content: """;
-            font-size: 4rem;
-            color: rgba(67, 97, 238, 0.2);
-            position: absolute;
-            line-height: 1;
-        }
-        
-        .testimonial-content::before {
-            top: -20px;
-            left: 0;
-        }
-        
-        .testimonial-content::after {
-            content: """;
-            bottom: -40px;
-            right: 0;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        /* Zaufali nam */
-        .trusted-by {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .trusted-title {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .trusted-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .trusted-logo {
-            background: white;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-sm);
-            padding: 1.5rem;
-            width: 180px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--text-light);
-            transition: var(--transition-normal);
-        }
-        
-        .trusted-logo:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            color: var(--primary-color);
         }
         
         /* Kontakt */
@@ -716,14 +569,15 @@
         .contact-icon {
             width: 40px;
             height: 40px;
-            background: var(--light-color);
+            background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-color);
+            color: white;
             font-size: 1.2rem;
             margin-right: 1rem;
+            flex-shrink: 0;
         }
         
         .contact-text h4 {
@@ -741,17 +595,6 @@
         .contact-form {
             flex: 1;
             min-width: 300px;
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .contact-form h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
         }
         
         .form-group {
@@ -770,7 +613,7 @@
             padding: 0.8rem 1rem;
             border: 1px solid #ddd;
             border-radius: var(--border-radius-sm);
-            font-family: 'Poppins', sans-serif;
+            font-family: inherit;
             font-size: 1rem;
             transition: var(--transition-fast);
         }
@@ -786,42 +629,21 @@
             resize: vertical;
         }
         
-        /* Polityka prywatności */
-        .privacy-section {
-            padding: 5rem 0;
-        }
-        
-        .privacy-content {
-            background: white;
-            padding: 2.5rem;
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 2rem;
             border-radius: var(--border-radius-md);
+            overflow: hidden;
             box-shadow: var(--shadow-md);
-        }
-        
-        .privacy-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-        
-        .privacy-content p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-        
-        .privacy-content h4 {
-            color: var(--dark-color);
-            margin: 2rem 0 1rem;
-            font-size: 1.2rem;
         }
         
         /* CTA */
         .cta {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 3rem 2rem;
             background: var(--gradient-primary);
-            border-radius: var(--border-radius-lg);
+            padding: 4rem 0;
+            text-align: center;
             color: white;
             position: relative;
             overflow: hidden;
@@ -835,32 +657,12 @@
             width: 100%;
             height: 100%;
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.2;
+            opacity: 0.3;
         }
         
         .cta-content {
             position: relative;
             z-index: 1;
-        }
-        
-        .counter {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: var(--border-radius-md);
-            margin-bottom: 2rem;
-            display: inline-block;
-        }
-        
-        .counter-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-        
-        .counter-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
         }
         
         .cta h3 {
@@ -871,6 +673,7 @@
         
         .cta p {
             color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
@@ -882,79 +685,121 @@
             background-color: var(--dark-color);
             color: white;
             padding: 4rem 0 2rem;
-            text-align: center;
-            margin-top: 4rem;
         }
         
         .footer-content {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h4 {
             color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-column h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 1.5px;
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
         
         .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            list-style: none;
         }
         
-        .footer-link {
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: var(--transition-fast);
+            font-size: 0.95rem;
         }
         
-        .footer-link:hover {
+        .footer-links a:hover {
             color: white;
+            padding-left: 5px;
         }
         
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition-normal);
-        }
-        
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
+        .footer-bottom p {
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
         
+        /* Polityka prywatności */
+        .privacy-section {
+            padding: 5rem 0;
+        }
+        
+        .privacy-content {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .privacy-content h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .privacy-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .privacy-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .privacy-content li {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
         /* Responsywność */
         @media (max-width: 1024px) {
-            .features-row, .steps-container {
+            .steps-container {
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .feature-card, .step-card {
+            .step-card {
                 min-width: 200px;
                 max-width: 45%;
             }
@@ -969,16 +814,16 @@
                 padding: 4rem 0 3rem;
             }
             
-            .feature-card, .module-card, .step-card, .trusted-logo {
+            .feature-card, .module-card {
+                max-width: 100%;
+            }
+            
+            .step-card {
                 max-width: 100%;
             }
             
             .section {
                 padding: 3rem 0;
-            }
-            
-            .nav-links {
-                display: none;
             }
         }
         
@@ -1082,16 +927,27 @@
                     <p>Dzięki aplikacji Szamani.AI nasza firma zaoszczędziła ponad 40 godzin pracy przy ocenie zgodności z RODO. Intuicyjny interfejs i szczegółowe raporty sprawiły, że cały proces był niezwykle efektywny.</p>
                 </div>
                 <p class="testimonial-author">Anna Kowalska, Inspektor Ochrony Danych w firmie Snowcam SC</p>
+                
+                <div class="testimonial-content">
+                    <p>Wdrożenie aplikacji Szamani.AI pozwoliło nam uporządkować wszystkie procedury związane z RODO. Szczególnie doceniamy moduł oceny ryzyka, który pomógł nam zidentyfikować potencjalne zagrożenia, o których wcześniej nie myśleliśmy.</p>
+                </div>
+                <p class="testimonial-author">Marek Nowak, Dyrektor IT w firmie GFM Rusztowania</p>
+                
+                <div class="testimonial-content">
+                    <p>Jako firma e-commerce przetwarzamy dane tysięcy klientów dziennie. Aplikacja Szamani.AI pomogła nam zautomatyzować procesy związane z RODO i znacząco zmniejszyć ryzyko naruszeń. Polecam każdemu, kto ceni sobie bezpieczeństwo i zgodność z przepisami.</p>
+                </div>
+                <p class="testimonial-author">Katarzyna Wiśniewska, Compliance Manager w Laptopdlaciebie.pl</p>
             </div>
             
             <div class="trusted-by">
                 <h4 class="trusted-title">Zaufali nam</h4>
                 <div class="trusted-logos">
-                    <div class="trusted-logo">DataSafe Pro</div>
-                    <div class="trusted-logo">SecureNet</div>
-                    <div class="trusted-logo">InfoGuard</div>
-                    <div class="trusted-logo">CyberShield</div>
-                    <div class="trusted-logo">TrustTech</div>
+                    <div class="trusted-logo">Optiq sp. z o.o.</div>
+                    <div class="trusted-logo">ITGreen</div>
+                    <div class="trusted-logo">LaptopdlaCiebie</div>
+                    <div class="trusted-logo">Snowcam</div>
+                    <div class="trusted-logo">Netcom</div>
+                    <div class="trusted-logo">Fartpol II</div>
                 </div>
             </div>
         </div>
@@ -1291,48 +1147,6 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Jak to działa?</h2>
-            <p class="section-description">Prosty, 4-stopniowy proces oceny zgodności z RODO</p>
-            
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Rozpocznij ocenę</h3>
-                    <p>Utwórz nową ocenę lub kontynuuj istniejącą. System przygotuje wszystkie sekcje do wypełnienia.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Wypełnij sekcje</h3>
-                    <p>Przejdź przez 7 sekcji oceny, odpowiadając na pytania. System na bieżąco zapisuje Twój postęp.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Przejrzyj wyniki</h3>
-                    <p>Po wypełnieniu wszystkich sekcji otrzymasz podsumowanie wyników z oznaczeniem obszarów wymagających poprawy.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Wygeneruj raport</h3>
-                    <p>Wyeksportuj wyniki oceny do profesjonalnego raportu PDF, gotowego do przedstawienia zarządowi lub audytorom.</p>
-                </div>
-            </div>
-            
-            <div class="cta">
-                <div class="cta-content">
-                    <div class="counter">
-                        <div class="counter-number">1000+</div>
-                        <div class="counter-text">zadowolonych klientów</div>
-                    </div>
-                    <h3>Rozpocznij ocenę RODO już teraz!</h3>
-                    <p>Dołącz do tysięcy organizacji, które już korzystają z naszego narzędzia i zapewnij zgodność swojej firmy z przepisami RODO.</p>
-                    <a href="http://form.optiq-ai.pl" class="btn btn-primary btn-lg">Rozpocznij za darmo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Kontakt</h2>
@@ -1349,45 +1163,44 @@
                         </div>
                     </div>
                     <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Telefon</h4>
+                            <p>609798340</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
                         <div class="contact-icon">✉️</div>
                         <div class="contact-text">
                             <h4>Email</h4>
                             <p>ai@optiq.net.pl</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-text">
-                            <h4>Telefon</h4>
-                            <p>+48 123 456 789</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div class="contact-text">
-                            <h4>Godziny pracy</h4>
-                            <p>Poniedziałek - Piątek: 9:00 - 17:00</p>
-                        </div>
+                    
+                    <!-- Google Map -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.1835587115584!2d18.11105377680947!3d51.85566647959432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ac5f6a5c8c2e7%3A0x4f7d0e4c4e1e9e9a!2sReymonta%201%2C%2063-520%20Grab%C3%B3w%20nad%20Prosn%C4%85!5e0!3m2!1spl!2spl!4v1713188677842!5m2!1spl!2spl" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
+                
                 <div class="contact-form">
                     <h3>Formularz kontaktowy</h3>
-                    <form action="#" method="POST">
+                    <form>
                         <div class="form-group">
                             <label for="name" class="form-label">Imię i nazwisko</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" class="form-control" placeholder="Twoje imię i nazwisko">
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" class="form-control" placeholder="Twój adres email">
                         </div>
                         <div class="form-group">
                             <label for="subject" class="form-label">Temat</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <input type="text" id="subject" class="form-control" placeholder="Temat wiadomości">
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Wiadomość</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Twoja wiadomość"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
                     </form>
@@ -1396,32 +1209,61 @@
         </div>
     </section>
 
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Gotowy na pełną zgodność z RODO?</h3>
+                <p>Rozpocznij ocenę zgodności z RODO już teraz i zyskaj pewność, że Twoja organizacja spełnia wszystkie wymogi prawne.</p>
+                <a href="http://form.optiq-ai.pl" class="btn btn-primary btn-lg">Rozpocznij ocenę za darmo</a>
+            </div>
+        </div>
+    </section>
+
     <section id="privacy" class="privacy-section">
         <div class="container">
             <h2 class="section-title">Polityka prywatności</h2>
-            <p class="section-description">Dowiedz się, jak chronimy Twoje dane osobowe</p>
-            
             <div class="privacy-content">
-                <h3>Polityka prywatności Szamani.AI</h3>
-                <p>Szamani.AI przywiązuje szczególną wagę do ochrony prywatności użytkowników swoich usług. Niniejsza Polityka Prywatności określa zasady gromadzenia, przetwarzania i wykorzystywania danych osobowych pozyskanych od użytkowników.</p>
+                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z aplikacji Szamani.AI do oceny zgodności z RODO.</p>
                 
-                <h4>1. Administrator danych osobowych</h4>
+                <h3>Administrator danych</h3>
                 <p>Administratorem danych osobowych jest Szamani.AI z siedzibą przy ul. Reymonta 1, 63-520 Grabów nad Prosną.</p>
                 
-                <h4>2. Zakres zbieranych danych</h4>
-                <p>Zbieramy tylko te dane, które są niezbędne do świadczenia naszych usług. Mogą to być: imię, nazwisko, adres e-mail, nazwa firmy oraz inne dane, które użytkownik dobrowolnie przekaże nam w ramach korzystania z naszych usług.</p>
+                <h3>Cel przetwarzania danych</h3>
+                <p>Dane osobowe Użytkowników przetwarzane są w celu:</p>
+                <ul>
+                    <li>Świadczenia usług związanych z oceną zgodności z RODO</li>
+                    <li>Komunikacji z Użytkownikiem</li>
+                    <li>Przesyłania informacji o zmianach w przepisach dotyczących ochrony danych osobowych</li>
+                    <li>Marketingu własnych produktów i usług</li>
+                </ul>
                 
-                <h4>3. Cel przetwarzania danych</h4>
-                <p>Dane osobowe przetwarzane są w celu świadczenia usług, obsługi konta użytkownika, realizacji umowy, marketingu własnych produktów oraz w celach analitycznych i statystycznych.</p>
+                <h3>Zakres przetwarzanych danych</h3>
+                <p>Przetwarzamy następujące dane osobowe Użytkowników:</p>
+                <ul>
+                    <li>Imię i nazwisko</li>
+                    <li>Adres e-mail</li>
+                    <li>Numer telefonu</li>
+                    <li>Nazwa firmy</li>
+                    <li>Stanowisko</li>
+                </ul>
                 
-                <h4>4. Prawa użytkownika</h4>
-                <p>Użytkownik ma prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, prawo do przenoszenia danych, prawo wniesienia sprzeciwu oraz prawo do cofnięcia zgody w dowolnym momencie.</p>
+                <h3>Prawa Użytkownika</h3>
+                <p>Użytkownik ma prawo do:</p>
+                <ul>
+                    <li>Dostępu do swoich danych</li>
+                    <li>Sprostowania danych</li>
+                    <li>Usunięcia danych</li>
+                    <li>Ograniczenia przetwarzania</li>
+                    <li>Przenoszenia danych</li>
+                    <li>Wniesienia sprzeciwu wobec przetwarzania</li>
+                    <li>Cofnięcia zgody na przetwarzanie danych</li>
+                </ul>
                 
-                <h4>5. Bezpieczeństwo danych</h4>
-                <p>Stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić ochronę przetwarzanych danych osobowych.</p>
+                <h3>Bezpieczeństwo danych</h3>
+                <p>Stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić bezpieczeństwo przetwarzanych danych osobowych, w tym ochronę przed nieuprawnionym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem.</p>
                 
-                <h4>6. Kontakt</h4>
-                <p>W sprawach związanych z ochroną danych osobowych można kontaktować się z nami pod adresem e-mail: ai@optiq.net.pl</p>
+                <h3>Kontakt</h3>
+                <p>W sprawach związanych z przetwarzaniem danych osobowych prosimy o kontakt pod adresem e-mail: ai@optiq.net.pl lub telefonicznie: 609798340.</p>
             </div>
         </div>
     </section>
@@ -1429,19 +1271,26 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Szamani.AI</div>
-                <div class="footer-links">
-                    <a href="#about" class="footer-link">O nas</a>
-                    <a href="#features" class="footer-link">Funkcje</a>
-                    <a href="#contact" class="footer-link">Kontakt</a>
-                    <a href="#privacy" class="footer-link">Polityka prywatności</a>
+                <div class="footer-column">
+                    <h4>O nas</h4>
+                    <p>Szamani.AI to zespół ekspertów z zakresu ochrony danych osobowych i technologii informatycznych, dostarczający nowoczesne rozwiązania wspierające zgodność z RODO.</p>
                 </div>
-                <div class="footer-social">
-                    <a href="#" class="social-icon">f</a>
-                    <a href="#" class="social-icon">in</a>
-                    <a href="#" class="social-icon">t</a>
+                <div class="footer-column">
+                    <h4>Szybkie linki</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">O nas</a></li>
+                        <li><a href="#features">Funkcje</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="#privacy">Polityka prywatności</a></li>
+                    </ul>
                 </div>
-                <p class="copyright">&copy; 2025 Szamani.AI. Wszelkie prawa zastrzeżone.</p>
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <p>Szamani.AI<br>Reymonta 1<br>63-520 Grabów nad Prosną<br>Tel: 609798340<br>Email: ai@optiq.net.pl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Szamani.AI. Wszelkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
