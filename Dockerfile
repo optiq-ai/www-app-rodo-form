@@ -12,11 +12,13 @@ RUN mkdir -p /usr/share/nginx/html/img
 COPY index.html /usr/share/nginx/html/
 COPY css/styles.css /usr/share/nginx/html/css/
 
-# Copy js directory if it exists and is not empty
-COPY js/* /usr/share/nginx/html/js/ 2>/dev/null || :
+# Use shell commands to handle empty directories
+RUN if [ -d "js" ] && [ "$(ls -A js 2>/dev/null)" ]; then \
+    cp -r js/* /usr/share/nginx/html/js/ 2>/dev/null || true; \
+    fi
 
-# Copy img directory if it exists and is not empty
-COPY img/.gitkeep /usr/share/nginx/html/img/ 2>/dev/null || :
+# Copy gitkeep file to ensure img directory exists
+COPY img/.gitkeep /usr/share/nginx/html/img/
 
 # Set proper permissions
 RUN chmod -R 755 /usr/share/nginx/html
