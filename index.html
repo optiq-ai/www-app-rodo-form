@@ -28,6 +28,15 @@
             --border-radius-lg: 12px;
             --transition-fast: all 0.2s ease;
             --transition-normal: all 0.3s ease;
+            
+            /* Kolory modułów */
+            --module-color-1: #4361ee;
+            --module-color-2: #3a86ff;
+            --module-color-3: #4cc9f0;
+            --module-color-4: #4895ef;
+            --module-color-5: #560bad;
+            --module-color-6: #7209b7;
+            --module-color-7: #f72585;
         }
         
         * {
@@ -94,6 +103,38 @@
         
         .logo a:hover {
             opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition-fast);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
         }
         
         /* Hero section */
@@ -223,12 +264,14 @@
         }
         
         /* Karty korzyści */
-        .features {
+        .features-row {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 1.5rem;
             margin-top: 3rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
         }
         
         .feature-card {
@@ -236,8 +279,8 @@
             border-radius: var(--border-radius-md);
             box-shadow: var(--shadow-md);
             padding: 2rem;
-            width: 100%;
-            max-width: 280px;
+            flex: 1;
+            min-width: 220px;
             text-align: center;
             transition: var(--transition-normal);
             border-top: 4px solid var(--primary-color);
@@ -270,6 +313,95 @@
         .feature-card p {
             color: var(--text-light);
             font-size: 0.95rem;
+        }
+        
+        /* O nas */
+        .about-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Funkcje */
+        .app-features {
+            margin-top: 3rem;
+        }
+        
+        .app-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+        
+        .app-feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .app-feature-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        
+        .app-feature-text h4 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .app-feature-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
         }
         
         /* Moduły */
@@ -322,7 +454,34 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: var(--gradient-primary);
+        }
+        
+        .module-card:nth-child(1)::before {
+            background: var(--module-color-1);
+        }
+        
+        .module-card:nth-child(2)::before {
+            background: var(--module-color-2);
+        }
+        
+        .module-card:nth-child(3)::before {
+            background: var(--module-color-3);
+        }
+        
+        .module-card:nth-child(4)::before {
+            background: var(--module-color-4);
+        }
+        
+        .module-card:nth-child(5)::before {
+            background: var(--module-color-5);
+        }
+        
+        .module-card:nth-child(6)::before {
+            background: var(--module-color-6);
+        }
+        
+        .module-card:nth-child(7)::before {
+            background: var(--module-color-7);
         }
         
         .module-card:hover {
@@ -355,11 +514,11 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: var(--gradient-primary);
+            background: var(--module-color-1);
         }
         
         .module-detail h3 {
-            color: var(--primary-color);
+            color: var(--module-color-1);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
@@ -502,18 +661,158 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
-            opacity: 0.7;
         }
         
         .trusted-logo {
-            height: 40px;
-            filter: grayscale(100%);
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            width: 180px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-light);
             transition: var(--transition-normal);
         }
         
         .trusted-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            color: var(--primary-color);
+        }
+        
+        /* Kontakt */
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .contact-text h4 {
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Polityka prywatności */
+        .privacy-section {
+            padding: 5rem 0;
+        }
+        
+        .privacy-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .privacy-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .privacy-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-content h4 {
+            color: var(--dark-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
         }
         
         /* CTA */
@@ -544,21 +843,6 @@
             z-index: 1;
         }
         
-        .cta h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Licznik */
         .counter {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 1rem;
@@ -577,6 +861,20 @@
         .counter-text {
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.9rem;
+        }
+        
+        .cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* Footer */
@@ -651,12 +949,12 @@
         
         /* Responsywność */
         @media (max-width: 1024px) {
-            .steps-container {
+            .features-row, .steps-container {
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .step-card {
+            .feature-card, .step-card {
                 min-width: 200px;
                 max-width: 45%;
             }
@@ -671,16 +969,16 @@
                 padding: 4rem 0 3rem;
             }
             
-            .feature-card, .module-card {
-                max-width: 100%;
-            }
-            
-            .step-card {
+            .feature-card, .module-card, .step-card, .trusted-logo {
                 max-width: 100%;
             }
             
             .section {
                 padding: 3rem 0;
+            }
+            
+            .nav-links {
+                display: none;
             }
         }
         
@@ -724,6 +1022,12 @@
                 <div class="logo">
                     <a href="#">Szamani.AI</a>
                 </div>
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">O nas</a>
+                    <a href="#features" class="nav-link">Funkcje</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                    <a href="#privacy" class="nav-link">Polityka prywatności</a>
+                </div>
             </div>
         </div>
     </header>
@@ -749,7 +1053,7 @@
             <h2 class="section-subtitle">Dlaczego warto wybrać naszą aplikację?</h2>
             <p class="section-description">Poznaj kluczowe korzyści, które pomogą Twojej organizacji spełnić wymogi RODO</p>
             
-            <div class="features">
+            <div class="features-row">
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Redukcja ryzyka kar finansowych</h3>
@@ -783,11 +1087,83 @@
             <div class="trusted-by">
                 <h4 class="trusted-title">Zaufali nam</h4>
                 <div class="trusted-logos">
-                    <div>Company A</div>
-                    <div>Company B</div>
-                    <div>Company C</div>
-                    <div>Company D</div>
-                    <div>Company E</div>
+                    <div class="trusted-logo">DataSafe Pro</div>
+                    <div class="trusted-logo">SecureNet</div>
+                    <div class="trusted-logo">InfoGuard</div>
+                    <div class="trusted-logo">CyberShield</div>
+                    <div class="trusted-logo">TrustTech</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">O nas</h2>
+            <p class="section-description">Poznaj zespół ekspertów stojących za aplikacją Szamani.AI</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Kim jesteśmy?</h3>
+                    <p>Szamani.AI to zespół doświadczonych specjalistów z zakresu ochrony danych osobowych i technologii informatycznych. Łączymy wiedzę prawniczą z nowoczesnymi rozwiązaniami technologicznymi, aby dostarczać narzędzia, które realnie pomagają organizacjom w spełnianiu wymogów RODO.</p>
+                    <p>Nasza misja to uproszczenie procesu oceny zgodności z RODO i zapewnienie organizacjom narzędzi, które pozwolą im skutecznie chronić dane osobowe swoich klientów i pracowników.</p>
+                    <p>Dzięki wieloletniemu doświadczeniu w branży, rozumiemy wyzwania, z jakimi mierzą się firmy w kontekście ochrony danych osobowych. Nasza aplikacja została stworzona z myślą o rzeczywistych potrzebach organizacji różnej wielkości.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder dla obrazu zespołu -->
+                    <div style="width: 100%; height: 300px; background-color: #e9ecef; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-weight: bold;">Zespół Szamani.AI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Funkcje aplikacji</h2>
+            <p class="section-description">Odkryj wszystkie możliwości, jakie oferuje nasza aplikacja do oceny zgodności z RODO</p>
+            
+            <div class="app-features">
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">1</div>
+                    <div class="app-feature-text">
+                        <h4>Kompleksowa ocena zgodności</h4>
+                        <p>Przeprowadź pełną ocenę zgodności z RODO w oparciu o 7 kluczowych modułów, obejmujących wszystkie aspekty ochrony danych osobowych.</p>
+                    </div>
+                </div>
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">2</div>
+                    <div class="app-feature-text">
+                        <h4>Automatyczne generowanie raportów</h4>
+                        <p>Generuj profesjonalne raporty w formacie PDF, gotowe do przedstawienia zarządowi, audytorom lub organom nadzorczym.</p>
+                    </div>
+                </div>
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">3</div>
+                    <div class="app-feature-text">
+                        <h4>Śledzenie postępów</h4>
+                        <p>Monitoruj postępy w realizacji zaleceń i poprawie zgodności z RODO dzięki intuicyjnemu dashboardowi.</p>
+                    </div>
+                </div>
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">4</div>
+                    <div class="app-feature-text">
+                        <h4>Personalizowane rekomendacje</h4>
+                        <p>Otrzymuj spersonalizowane rekomendacje dotyczące poprawy zgodności z RODO, dostosowane do specyfiki Twojej organizacji.</p>
+                    </div>
+                </div>
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">5</div>
+                    <div class="app-feature-text">
+                        <h4>Biblioteka wzorów dokumentów</h4>
+                        <p>Korzystaj z gotowych wzorów dokumentów związanych z RODO, które możesz dostosować do potrzeb swojej organizacji.</p>
+                    </div>
+                </div>
+                <div class="app-feature-item">
+                    <div class="app-feature-icon">6</div>
+                    <div class="app-feature-text">
+                        <h4>Powiadomienia o zmianach w przepisach</h4>
+                        <p>Bądź na bieżąco ze zmianami w przepisach dotyczących ochrony danych osobowych dzięki automatycznym powiadomieniom.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -879,16 +1255,108 @@
         </div>
     </section>
 
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <p class="section-description">Masz pytania? Skontaktuj się z nami!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Dane kontaktowe</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Adres</h4>
+                            <p>Szamani.AI<br>Reymonta 1<br>63-520 Grabów nad Prosną</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>ai@optiq.net.pl</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <h4>Telefon</h4>
+                            <p>+48 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h4>Godziny pracy</h4>
+                            <p>Poniedziałek - Piątek: 9:00 - 17:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Formularz kontaktowy</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Imię i nazwisko</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Temat</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Wiadomość</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="privacy-section">
+        <div class="container">
+            <h2 class="section-title">Polityka prywatności</h2>
+            <p class="section-description">Dowiedz się, jak chronimy Twoje dane osobowe</p>
+            
+            <div class="privacy-content">
+                <h3>Polityka prywatności Szamani.AI</h3>
+                <p>Szamani.AI przywiązuje szczególną wagę do ochrony prywatności użytkowników swoich usług. Niniejsza Polityka Prywatności określa zasady gromadzenia, przetwarzania i wykorzystywania danych osobowych pozyskanych od użytkowników.</p>
+                
+                <h4>1. Administrator danych osobowych</h4>
+                <p>Administratorem danych osobowych jest Szamani.AI z siedzibą przy ul. Reymonta 1, 63-520 Grabów nad Prosną.</p>
+                
+                <h4>2. Zakres zbieranych danych</h4>
+                <p>Zbieramy tylko te dane, które są niezbędne do świadczenia naszych usług. Mogą to być: imię, nazwisko, adres e-mail, nazwa firmy oraz inne dane, które użytkownik dobrowolnie przekaże nam w ramach korzystania z naszych usług.</p>
+                
+                <h4>3. Cel przetwarzania danych</h4>
+                <p>Dane osobowe przetwarzane są w celu świadczenia usług, obsługi konta użytkownika, realizacji umowy, marketingu własnych produktów oraz w celach analitycznych i statystycznych.</p>
+                
+                <h4>4. Prawa użytkownika</h4>
+                <p>Użytkownik ma prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, prawo do przenoszenia danych, prawo wniesienia sprzeciwu oraz prawo do cofnięcia zgody w dowolnym momencie.</p>
+                
+                <h4>5. Bezpieczeństwo danych</h4>
+                <p>Stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić ochronę przetwarzanych danych osobowych.</p>
+                
+                <h4>6. Kontakt</h4>
+                <p>W sprawach związanych z ochroną danych osobowych można kontaktować się z nami pod adresem e-mail: ai@optiq.net.pl</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Szamani.AI</div>
                 <div class="footer-links">
-                    <a href="#" class="footer-link">O nas</a>
-                    <a href="#" class="footer-link">Funkcje</a>
-                    <a href="#" class="footer-link">Cennik</a>
-                    <a href="#" class="footer-link">Kontakt</a>
-                    <a href="#" class="footer-link">Polityka prywatności</a>
+                    <a href="#about" class="footer-link">O nas</a>
+                    <a href="#features" class="footer-link">Funkcje</a>
+                    <a href="#contact" class="footer-link">Kontakt</a>
+                    <a href="#privacy" class="footer-link">Polityka prywatności</a>
                 </div>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
