@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   landing-page:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
     restart: always
     networks:
       - optiq_prod
