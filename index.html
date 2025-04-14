@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szamani.AI - Kompleksowa Ocena RODO</title>
+    <title>Formularz Oceny RODO by Szamani.AI</title>
     <style>
         /* Podstawowe style */
         body {
@@ -34,14 +34,20 @@
             color: #4a6cf7;
         }
         .hero {
-            background-color: #f0f4ff;
+            background-color: #2962ff;
             padding: 4rem 0;
             text-align: center;
+            color: white;
         }
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2d3748;
+            color: white;
+        }
+        .hero p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
         .btn {
             display: inline-block;
@@ -50,15 +56,115 @@
             text-decoration: none;
             font-weight: bold;
             margin: 10px;
+            transition: all 0.3s ease;
         }
         .btn-primary {
-            background-color: #4a6cf7;
+            background-color: #ff4081;
             color: white;
         }
-        .btn-secondary {
-            background-color: transparent;
+        .btn-primary:hover {
+            background-color: #e91e63;
+            transform: translateY(-2px);
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
             color: #4a6cf7;
-            border: 1px solid #4a6cf7;
+            font-size: 1.8rem;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .modules {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .module-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .module-card h3 {
+            color: #4a6cf7;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .step-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+        }
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #4a6cf7;
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .step-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .testimonial {
+            text-align: center;
+            margin-top: 2rem;
+            color: #4a6cf7;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: #f0f4ff;
+            padding: 3rem 0;
         }
         footer {
             background-color: #2d3748;
@@ -66,6 +172,18 @@
             padding: 2rem 0;
             text-align: center;
             margin-top: 2rem;
+        }
+        .list-item {
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+        .list-item:before {
+            content: "•";
+            color: #4a6cf7;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
     </style>
 </head>
@@ -83,16 +201,117 @@
             <h1>Ocena zgodności z RODO w zasięgu jednego kliknięcia</h1>
             <p>Kompleksowa aplikacja, która przeprowadzi Cię przez wszystkie aspekty RODO</p>
             <div>
-                <a href="#" class="btn btn-primary">Rozpocznij ocenę za darmo</a>
-                <a href="http://localhost:81" class="btn btn-secondary">Zobacz demo</a>
+                <a href="http://form.optiq-ai.pl" class="btn btn-primary">Rozpocznij ocenę za darmo</a>
+            </div>
+            <div class="testimonial">
+                <p>Już ponad 1000 organizacji korzysta z naszego narzędzia</p>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container" style="text-align: center;">
-            <h2>Kompleksowa ocena RODO jeszcze nigdy nie była tak prosta</h2>
-            <p>Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Kompleksowa ocena RODO jeszcze nigdy nie była tak prosta</h2>
+            
+            <h2 class="section-subtitle">Dlaczego warto wybrać naszą aplikację?</h2>
+            <p style="text-align: center;">Poznaj kluczowe korzyści, które pomogą Twojej organizacji spełnić wymogi RODO</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Redukcja ryzyka kar finansowych</h3>
+                    <p>Systematyczna ocena zgodności z RODO minimalizuje ryzyko naruszeń i związanych z nimi kar finansowych sięgających 20 mln EUR.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Oszczędność czasu</h3>
+                    <p>Zredukuj czas potrzebny na ocenę zgodności z RODO nawet o 60% dzięki intuicyjnemu interfejsowi i zautomatyzowanym procesom.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pełna dokumentacja zgodności</h3>
+                    <p>Automatycznie generuj profesjonalne raporty dokumentujące zgodność z RODO, idealne podczas kontroli i audytów.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Ekspertowe rekomendacje</h3>
+                    <p>Otrzymuj praktyczne wskazówki i rekomendacje dotyczące poprawy zgodności z RODO, opracowane przez ekspertów.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section highlight">
+        <div class="container">
+            <h2 class="section-title">7 kompleksowych modułów oceny RODO</h2>
+            <p style="text-align: center;">Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
+            
+            <div class="modules">
+                <div class="module-card">
+                    <h3>Organizacja systemu ochrony danych</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Prawo do przetwarzania danych</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Realizacja praw osoby</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Inspektor Ochrony Danych</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Rejestrowanie czynności</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Ocena skutków przetwarzania</h3>
+                </div>
+                <div class="module-card">
+                    <h3>Naruszenie ochrony danych</h3>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h3 style="color: #4a6cf7;">Organizacja systemu ochrony danych</h3>
+                <p>Ocenia fundamentalne aspekty organizacyjne systemu ochrony danych osobowych w Twojej organizacji, w tym:</p>
+                <ul style="list-style-type: none; padding-left: 1rem;">
+                    <li class="list-item">Polityka ochrony danych osobowych</li>
+                    <li class="list-item">Wyznaczenie ADO i powierzenia przetwarzania</li>
+                    <li class="list-item">Szkolenia pracowników</li>
+                    <li class="list-item">Współadministrowanie danymi</li>
+                    <li class="list-item">Umowy powierzenia przetwarzania</li>
+                </ul>
+                <p><strong>Zawiera 11 szczegółowych zadań weryfikacyjnych</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Jak to działa?</h2>
+            <p style="text-align: center;">Prosty, 4-stopniowy proces oceny zgodności z RODO</p>
+            
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Rozpocznij ocenę</h3>
+                    <p>Utwórz nową ocenę lub kontynuuj istniejącą. System przygotuje wszystkie sekcje do wypełnienia.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Wypełnij sekcje</h3>
+                    <p>Przejdź przez 7 sekcji oceny, odpowiadając na pytania. System na bieżąco zapisuje Twój postęp.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Przejrzyj wyniki</h3>
+                    <p>Po wypełnieniu wszystkich sekcji otrzymasz podsumowanie wyników z oznaczeniem obszarów wymagających poprawy.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Wygeneruj raport</h3>
+                    <p>Wyeksportuj wyniki oceny do profesjonalnego raportu PDF, gotowego do przedstawienia zarządowi lub audytorom.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="http://form.optiq-ai.pl" class="btn btn-primary">Rozpocznij teraz</a>
+            </div>
         </div>
     </section>
 
