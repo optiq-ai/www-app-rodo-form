@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szamani.AI - Kompleksowa Ocena RODO</title>
     <style>
-        /* Inline styles to avoid external CSS file */
+        /* Podstawowe style */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -14,16 +14,16 @@
             color: #333;
             background-color: #f8f9fa;
         }
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
         }
         .logo {
             font-size: 1.5rem;
@@ -33,27 +33,15 @@
             text-decoration: none;
             color: #4a6cf7;
         }
-        .copyright {
-            font-size: 0.8rem;
-            color: #777;
-            margin-left: 0.5rem;
-        }
-        section {
-            padding: 3rem 0;
+        .hero {
+            background-color: #f0f4ff;
+            padding: 4rem 0;
+            text-align: center;
         }
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: #2d3748;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #2d3748;
-            text-align: center;
-        }
-        p {
-            margin-bottom: 1rem;
         }
         .btn {
             display: inline-block;
@@ -61,8 +49,7 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            margin: 10px;
         }
         .btn-primary {
             background-color: #4a6cf7;
@@ -73,23 +60,12 @@
             color: #4a6cf7;
             border: 1px solid #4a6cf7;
         }
-        .hero {
-            background-color: #f0f4ff;
-            padding: 4rem 0;
-        }
-        .hero-content {
-            max-width: 600px;
-        }
-        .hero-buttons {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-        }
         footer {
             background-color: #2d3748;
             color: white;
             padding: 2rem 0;
             text-align: center;
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -98,28 +74,25 @@
         <div class="container">
             <div class="logo">
                 <a href="#">Szamani.AI</a>
-                <span class="copyright">© 2025</span>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Ocena zgodności z RODO w zasięgu jednego kliknięcia</h1>
-                <p>Kompleksowa aplikacja, która przeprowadzi Cię przez wszystkie aspekty RODO</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Rozpocznij ocenę za darmo</a>
-                    <a href="http://localhost:81" class="btn btn-secondary">Zobacz demo</a>
-                </div>
+            <h1>Ocena zgodności z RODO w zasięgu jednego kliknięcia</h1>
+            <p>Kompleksowa aplikacja, która przeprowadzi Cię przez wszystkie aspekty RODO</p>
+            <div>
+                <a href="#" class="btn btn-primary">Rozpocznij ocenę za darmo</a>
+                <a href="http://localhost:81" class="btn btn-secondary">Zobacz demo</a>
             </div>
         </div>
     </section>
 
     <section>
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <h2>Kompleksowa ocena RODO jeszcze nigdy nie była tak prosta</h2>
-            <p style="text-align: center;">Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
+            <p>Nasza aplikacja pokrywa wszystkie kluczowe obszary wymagane do pełnej zgodności z RODO</p>
         </div>
     </section>
 
