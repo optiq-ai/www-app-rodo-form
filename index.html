@@ -792,6 +792,129 @@
             font-size: 1rem;
         }
         
+        /* Testimonials */
+        .testimonials {
+            margin-top: 4rem;
+        }
+        
+        .testimonial-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .testimonial-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            max-width: 350px;
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .testimonial-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--primary-color);
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-content p {
+            color: var(--text-light);
+            font-style: italic;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+        
+        .testimonial-content p::before,
+        .testimonial-content p::after {
+            content: '"';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-position {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        /* Trusted By Section */
+        .trusted-by {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .trusted-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trusted-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trusted-logo {
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            min-width: 180px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition-normal);
+        }
+        
+        .trusted-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            color: var(--primary-color);
+        }
+        
         /* Responsywność */
         @media (max-width: 1024px) {
             .steps-container {
@@ -923,21 +1046,38 @@
             
             <div class="testimonials">
                 <h3 class="testimonial-title">Co mówią nasi klienci</h3>
-                <div class="testimonial-content">
-                    <p>Dzięki aplikacji Szamani.AI nasza firma zaoszczędziła ponad 40 godzin pracy przy ocenie zgodności z RODO. Intuicyjny interfejs i szczegółowe raporty sprawiły, że cały proces był niezwykle efektywny.</p>
+                <div class="testimonial-cards">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/woman_headshot.jpeg" alt="Anna Kowalska">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Dzięki aplikacji Szamani.AI nasza firma zaoszczędziła ponad 40 godzin pracy przy ocenie zgodności z RODO. Intuicyjny interfejs i szczegółowe raporty sprawiły, że cały proces był niezwykle efektywny.</p>
+                        </div>
+                        <p class="testimonial-author">Anna Kowalska</p>
+                        <p class="testimonial-position">Inspektor Ochrony Danych w firmie Snowcam SC</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/man_headshot.jpeg" alt="Marek Nowak">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Wdrożenie aplikacji Szamani.AI pozwoliło nam uporządkować wszystkie procedury związane z RODO. Szczególnie doceniamy moduł oceny ryzyka, który pomógł nam zidentyfikować potencjalne zagrożenia, o których wcześniej nie myśleliśmy.</p>
+                        </div>
+                        <p class="testimonial-author">Marek Nowak</p>
+                        <p class="testimonial-position">Dyrektor IT w firmie GFM Rusztowania</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/woman_headshot2.jpeg" alt="Katarzyna Wiśniewska">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Jako firma e-commerce przetwarzamy dane tysięcy klientów dziennie. Aplikacja Szamani.AI pomogła nam zautomatyzować procesy związane z RODO i znacząco zmniejszyć ryzyko naruszeń. Polecam każdemu, kto ceni sobie bezpieczeństwo i zgodność z przepisami.</p>
+                        </div>
+                        <p class="testimonial-author">Katarzyna Wiśniewska</p>
+                        <p class="testimonial-position">Compliance Manager w Laptopdlaciebie.pl</p>
+                    </div>
                 </div>
-                <p class="testimonial-author">Anna Kowalska, Inspektor Ochrony Danych w firmie Snowcam SC</p>
-                
-                <div class="testimonial-content">
-                    <p>Wdrożenie aplikacji Szamani.AI pozwoliło nam uporządkować wszystkie procedury związane z RODO. Szczególnie doceniamy moduł oceny ryzyka, który pomógł nam zidentyfikować potencjalne zagrożenia, o których wcześniej nie myśleliśmy.</p>
-                </div>
-                <p class="testimonial-author">Marek Nowak, Dyrektor IT w firmie GFM Rusztowania</p>
-                
-                <div class="testimonial-content">
-                    <p>Jako firma e-commerce przetwarzamy dane tysięcy klientów dziennie. Aplikacja Szamani.AI pomogła nam zautomatyzować procesy związane z RODO i znacząco zmniejszyć ryzyko naruszeń. Polecam każdemu, kto ceni sobie bezpieczeństwo i zgodność z przepisami.</p>
-                </div>
-                <p class="testimonial-author">Katarzyna Wiśniewska, Compliance Manager w Laptopdlaciebie.pl</p>
-            </div>
             
             <div class="trusted-by">
                 <h4 class="trusted-title">Zaufali nam</h4>
@@ -1209,61 +1349,71 @@
         </div>
     </section>
 
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h3>Gotowy na pełną zgodność z RODO?</h3>
-                <p>Rozpocznij ocenę zgodności z RODO już teraz i zyskaj pewność, że Twoja organizacja spełnia wszystkie wymogi prawne.</p>
-                <a href="http://form.optiq-ai.pl" class="btn btn-primary btn-lg">Rozpocznij ocenę za darmo</a>
-            </div>
-        </div>
-    </section>
-
     <section id="privacy" class="privacy-section">
         <div class="container">
             <h2 class="section-title">Polityka prywatności</h2>
+            <p class="section-description">Dowiedz się, jak chronimy Twoje dane osobowe</p>
+            
             <div class="privacy-content">
-                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z aplikacji Szamani.AI do oceny zgodności z RODO.</p>
+                <h3>Wprowadzenie</h3>
+                <p>Szamani.AI szanuje prywatność użytkowników i zobowiązuje się do ochrony ich danych osobowych zgodnie z obowiązującymi przepisami, w tym z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).</p>
                 
                 <h3>Administrator danych</h3>
                 <p>Administratorem danych osobowych jest Szamani.AI z siedzibą przy ul. Reymonta 1, 63-520 Grabów nad Prosną.</p>
                 
-                <h3>Cel przetwarzania danych</h3>
-                <p>Dane osobowe Użytkowników przetwarzane są w celu:</p>
+                <h3>Zakres zbieranych danych</h3>
+                <p>Zbieramy następujące dane osobowe:</p>
                 <ul>
-                    <li>Świadczenia usług związanych z oceną zgodności z RODO</li>
-                    <li>Komunikacji z Użytkownikiem</li>
-                    <li>Przesyłania informacji o zmianach w przepisach dotyczących ochrony danych osobowych</li>
-                    <li>Marketingu własnych produktów i usług</li>
+                    <li>Dane kontaktowe (imię, nazwisko, adres e-mail, numer telefonu)</li>
+                    <li>Dane organizacji (nazwa, adres, NIP)</li>
+                    <li>Dane dotyczące korzystania z naszej strony internetowej i aplikacji</li>
                 </ul>
                 
-                <h3>Zakres przetwarzanych danych</h3>
-                <p>Przetwarzamy następujące dane osobowe Użytkowników:</p>
+                <h3>Cele przetwarzania danych</h3>
+                <p>Dane osobowe przetwarzamy w następujących celach:</p>
                 <ul>
-                    <li>Imię i nazwisko</li>
-                    <li>Adres e-mail</li>
-                    <li>Numer telefonu</li>
-                    <li>Nazwa firmy</li>
-                    <li>Stanowisko</li>
+                    <li>Świadczenie usług związanych z oceną zgodności z RODO</li>
+                    <li>Komunikacja z użytkownikami</li>
+                    <li>Poprawa jakości naszych usług</li>
+                    <li>Marketing bezpośredni naszych produktów i usług</li>
                 </ul>
                 
-                <h3>Prawa Użytkownika</h3>
-                <p>Użytkownik ma prawo do:</p>
+                <h3>Podstawy prawne przetwarzania</h3>
+                <p>Przetwarzamy dane osobowe na podstawie:</p>
                 <ul>
-                    <li>Dostępu do swoich danych</li>
-                    <li>Sprostowania danych</li>
-                    <li>Usunięcia danych</li>
-                    <li>Ograniczenia przetwarzania</li>
-                    <li>Przenoszenia danych</li>
-                    <li>Wniesienia sprzeciwu wobec przetwarzania</li>
-                    <li>Cofnięcia zgody na przetwarzanie danych</li>
+                    <li>Zgody użytkownika</li>
+                    <li>Niezbędności do wykonania umowy</li>
+                    <li>Prawnie uzasadnionego interesu administratora</li>
+                    <li>Obowiązku prawnego</li>
                 </ul>
                 
-                <h3>Bezpieczeństwo danych</h3>
-                <p>Stosujemy odpowiednie środki techniczne i organizacyjne, aby zapewnić bezpieczeństwo przetwarzanych danych osobowych, w tym ochronę przed nieuprawnionym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem.</p>
+                <h3>Okres przechowywania danych</h3>
+                <p>Dane osobowe przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane, a następnie przez okres wymagany przez przepisy prawa lub do momentu przedawnienia roszczeń.</p>
+                
+                <h3>Prawa użytkowników</h3>
+                <p>Użytkownikom przysługują następujące prawa:</p>
+                <ul>
+                    <li>Prawo dostępu do danych</li>
+                    <li>Prawo do sprostowania danych</li>
+                    <li>Prawo do usunięcia danych</li>
+                    <li>Prawo do ograniczenia przetwarzania</li>
+                    <li>Prawo do przenoszenia danych</li>
+                    <li>Prawo do sprzeciwu</li>
+                    <li>Prawo do wycofania zgody</li>
+                </ul>
                 
                 <h3>Kontakt</h3>
-                <p>W sprawach związanych z przetwarzaniem danych osobowych prosimy o kontakt pod adresem e-mail: ai@optiq.net.pl lub telefonicznie: 609798340.</p>
+                <p>W sprawach związanych z ochroną danych osobowych można kontaktować się z nami pod adresem email: ai@optiq.net.pl lub telefonicznie: 609798340.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Rozpocznij ocenę zgodności z RODO już dziś!</h3>
+                <p>Dołącz do ponad 1000 organizacji, które zaufały naszej aplikacji i zyskaj pewność, że Twoja firma spełnia wszystkie wymogi RODO.</p>
+                <a href="http://form.optiq-ai.pl" class="btn btn-secondary btn-lg">Rozpocznij ocenę za darmo</a>
             </div>
         </div>
     </section>
@@ -1273,7 +1423,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>O nas</h4>
-                    <p>Szamani.AI to zespół ekspertów z zakresu ochrony danych osobowych i technologii informatycznych, dostarczający nowoczesne rozwiązania wspierające zgodność z RODO.</p>
+                    <p>Szamani.AI to zespół ekspertów z zakresu ochrony danych osobowych i technologii informatycznych, dostarczający innowacyjne rozwiązania wspierające zgodność z RODO.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Szybkie linki</h4>
@@ -1286,7 +1436,8 @@
                 </div>
                 <div class="footer-column">
                     <h4>Kontakt</h4>
-                    <p>Szamani.AI<br>Reymonta 1<br>63-520 Grabów nad Prosną<br>Tel: 609798340<br>Email: ai@optiq.net.pl</p>
+                    <p>Szamani.AI<br>Reymonta 1<br>63-520 Grabów nad Prosną</p>
+                    <p>Email: ai@optiq.net.pl<br>Tel: 609798340</p>
                 </div>
             </div>
             <div class="footer-bottom">
