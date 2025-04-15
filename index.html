@@ -10,7 +10,7 @@
     <style>
         /* Zmienne kolorów */
         :root {
-            --primary-color: #0a84ff;
+            --primary-color: #00a8ff;
             --secondary-color: #00c8ff;
             --accent-color: #0062cc;
             --light-color: #f8f9fa;
@@ -21,8 +21,8 @@
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
             --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
-            --gradient-primary: linear-gradient(135deg, #0a84ff 0%, #0062cc 100%);
-            --gradient-secondary: linear-gradient(135deg, #00c8ff 0%, #0a84ff 100%);
+            --gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0062cc 100%);
+            --gradient-secondary: linear-gradient(135deg, #00c8ff 0%, #00a8ff 100%);
             --border-radius-sm: 4px;
             --border-radius-md: 8px;
             --border-radius-lg: 12px;
@@ -30,7 +30,7 @@
             --transition-normal: all 0.3s ease;
             
             /* Kolory modułów */
-            --module-color-1: #0a84ff;
+            --module-color-1: #00a8ff;
             --module-color-2: #0095ff;
             --module-color-3: #00a8ff;
             --module-color-4: #00b8ff;
@@ -153,11 +153,59 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("images/hero_background.jpeg");
+            z-index: 0;
+            animation: slideshow 60s infinite;
             background-size: cover;
             background-position: center;
-            opacity: 0.4;
-            z-index: 0;
+            opacity: 0.8;
+            filter: brightness(1.1) saturate(1.2);
+        }
+        
+        @keyframes slideshow {
+            0%, 9% {
+                background-image: url("images/slideshow/slide1.jpeg");
+                opacity: 0.8;
+            }
+            10%, 19% {
+                background-image: url("images/slideshow/slide2.jpeg");
+                opacity: 0.8;
+            }
+            20%, 29% {
+                background-image: url("images/slideshow/slide3.jpeg");
+                opacity: 0.8;
+            }
+            30%, 39% {
+                background-image: url("images/slideshow/slide4.jpeg");
+                opacity: 0.8;
+            }
+            40%, 49% {
+                background-image: url("images/slideshow/slide5.jpeg");
+                opacity: 0.8;
+            }
+            50%, 59% {
+                background-image: url("images/slideshow/slide6.jpeg");
+                opacity: 0.8;
+            }
+            60%, 69% {
+                background-image: url("images/slideshow/slide7.jpeg");
+                opacity: 0.8;
+            }
+            70%, 79% {
+                background-image: url("images/slideshow/slide8.jpeg");
+                opacity: 0.8;
+            }
+            80%, 89% {
+                background-image: url("images/slideshow/slide9.jpeg");
+                opacity: 0.8;
+            }
+            90%, 99% {
+                background-image: url("images/slideshow/slide10.jpeg");
+                opacity: 0.8;
+            }
+            100% {
+                background-image: url("images/slideshow/slide1.jpeg");
+                opacity: 0.8;
+            }
         }
         
         .hero::before {
@@ -211,6 +259,7 @@
             background: var(--gradient-secondary);
             color: white;
             border: none;
+            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
         }
         
         .btn-primary:hover {
