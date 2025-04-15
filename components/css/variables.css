@@ -1,0 +1,30 @@
+/* Zmienne kolorów */
+:root {
+    --primary-color: #00a8ff;
+    --secondary-color: #00c8ff;
+    --accent-color: #0062cc;
+    --light-color: #f8f9fa;
+    --dark-color: #2d3748;
+    --success-color: #4caf50;
+    --text-color: #333;
+    --text-light: #666;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+    --gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0062cc 100%);
+    --gradient-secondary: linear-gradient(135deg, #00c8ff 0%, #00a8ff 100%);
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    
+    /* Kolory modułów */
+    --module-color-1: #00a8ff;
+    --module-color-2: #0095ff;
+    --module-color-3: #00a8ff;
+    --module-color-4: #00b8ff;
+    --module-color-5: #00c8ff;
+    --module-color-6: #00d8ff;
+    --module-color-7: #00e8ff;
+}

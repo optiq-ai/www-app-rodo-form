@@ -1,0 +1,66 @@
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .steps-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .step-card {
+        min-width: 200px;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .feature-card, .module-card {
+        max-width: 100%;
+    }
+    
+    .step-card {
+        max-width: 100%;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 80%;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .cta h3 {
+        font-size: 1.5rem;
+    }
+}
