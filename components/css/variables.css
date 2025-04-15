@@ -1,6 +1,6 @@
 /* Zmienne kolorów */
 :root {
-    --primary-color: #00a8ff;
+    --primary-color: #00b7ff;
     --secondary-color: #00c8ff;
     --accent-color: #0062cc;
     --light-color: #f8f9fa;
@@ -11,8 +11,8 @@
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
     --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
-    --gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0062cc 100%);
-    --gradient-secondary: linear-gradient(135deg, #00c8ff 0%, #00a8ff 100%);
+    --gradient-primary: linear-gradient(135deg, #00b7ff 0%, #0062cc 100%);
+    --gradient-secondary: linear-gradient(135deg, #00c8ff 0%, #00b7ff 100%);
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
     --border-radius-lg: 12px;
@@ -20,11 +20,17 @@
     --transition-normal: all 0.3s ease;
     
     /* Kolory modułów */
-    --module-color-1: #00a8ff;
+    --module-color-1: #00b7ff;
     --module-color-2: #0095ff;
     --module-color-3: #00a8ff;
     --module-color-4: #00b8ff;
     --module-color-5: #00c8ff;
     --module-color-6: #00d8ff;
     --module-color-7: #00e8ff;
+    
+    /* Glowing text effect */
+    --glow-blue: #00b7ff;
+    --text-glow: 0 0 10px rgba(0, 183, 255, 0.8), 
+                 0 0 20px rgba(0, 183, 255, 0.5),
+                 0 0 30px rgba(0, 183, 255, 0.3);
 }

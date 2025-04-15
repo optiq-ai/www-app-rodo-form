@@ -25,9 +25,9 @@
 }
 
 .module-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 5px 15px rgba(0, 183, 255, 0.15);
     padding: 1.5rem;
     width: 100%;
     max-width: 250px;
@@ -39,6 +39,7 @@
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 183, 255, 0.1);
 }
 
 .module-card::before {
@@ -48,6 +49,7 @@
     left: 0;
     width: 4px;
     height: 100%;
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.8);
 }
 
 .module-card:nth-child(1)::before {
@@ -80,13 +82,15 @@
 
 .module-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 25px rgba(0, 183, 255, 0.25);
+    border-color: rgba(0, 183, 255, 0.3);
 }
 
 .module-card h4 {
-    color: var(--dark-color);
+    color: var(--glow-blue);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 183, 255, 0.3);
 }
 
 .module-card p {

@@ -39,10 +39,11 @@ p {
 .section-title {
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--glow-blue);
     font-size: 2.2rem;
     position: relative;
     padding-bottom: 1rem;
+    text-shadow: var(--text-glow);
 }
 
 .section-title::after {
@@ -60,9 +61,10 @@ p {
 .section-subtitle {
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: var(--glow-blue);
     font-size: 1.8rem;
     font-weight: 600;
+    text-shadow: var(--text-glow);
 }
 
 .section-description {
@@ -92,24 +94,26 @@ p {
     background: var(--gradient-secondary);
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 183, 255, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 25px rgba(0, 183, 255, 0.6);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--glow-blue);
+    border: 2px solid var(--glow-blue);
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.2);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
+    background-color: var(--glow-blue);
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
 }
 
 .btn-lg {
